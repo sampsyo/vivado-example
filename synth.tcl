@@ -3,9 +3,9 @@
 set outdir ./out
 set partname xc7z020clg484-1
 
-# Create the project (forcibly overwriting) and add Verilog sources.
+# Create the project (forcibly overwriting) and add SystemVerilog sources.
 create_project -force -part xc7z020clg484-1 FutilBuild $outdir
-add_files [glob ./*.v]
+add_files [glob ./*.sv]
 set_property top main [current_fileset]
 
 # Run synthesis.
