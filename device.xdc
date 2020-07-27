@@ -11,7 +11,9 @@
 set_property PACKAGE_PIN Y9 [get_ports clk]
 set_property IOSTANDARD LVCMOS18 [get_ports clk]
 
-# Connect the clock.
+# Connect the clock. This is where we determine the target frequency for the
+# design, which of course is super important! Just sticking with 50 ns, which
+# translates to 20 MHz (which is very slow!!).
 create_clock -period 50.000 -name clk -waveform {0.000 25.000} [get_ports clk]
 
 # Go port.
