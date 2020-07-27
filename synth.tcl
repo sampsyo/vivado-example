@@ -15,9 +15,12 @@
 set outdir ./out
 set partname xc7z020clg484-1
 
-# Create the project (forcibly overwriting) and add SystemVerilog sources.
+# Create the project (forcibly overwriting) and add sources SystemVerilog
+# (*.sv) and Xilinx constraint files (*.xdc), which contain directives for
+# connecting design signals to physical FPGA pins.
 create_project -force -part xc7z020clg484-1 FutilBuild $outdir
 add_files [glob ./*.sv]
+add_files -fileset constrs_1 [glob ./*.xdc]
 set_property top main [current_fileset]
 
 # Run synthesis. This is enough to generate the utilization report mentioned
