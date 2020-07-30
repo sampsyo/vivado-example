@@ -23,7 +23,8 @@ add_files [glob ./*.sv]
 add_files -fileset constrs_1 [glob ./*.xdc]
 set_property top main [current_fileset]
 
-# XXX
+# Switch the project to "out-of-context" mode, which frees us from the need to
+# hook up every input & output wire to a physical device pin.
 set_property -name {STEPS.SYNTH_DESIGN.ARGS.MORE OPTIONS} -value {-mode out_of_context} -objects [get_runs synth_1]
 
 # Run synthesis. This is enough to generate the utilization report mentioned
