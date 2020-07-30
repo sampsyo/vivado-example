@@ -32,7 +32,7 @@ set_property -name {STEPS.SYNTH_DESIGN.ARGS.MORE OPTIONS} -value {-mode out_of_c
 launch_runs synth_1
 wait_on_run synth_1
 
-# Run implementation to generate a bitstream. This also produces the timing
+# Run implementation to do place & route. This also produces the timing
 # report mentioned above. Removing this step makes things go quite a bit
 # faster if you just need the resource report!
 set_property STEPS.PHYS_OPT_DESIGN.IS_ENABLED true [get_runs impl_1]
