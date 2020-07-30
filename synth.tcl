@@ -27,10 +27,3 @@ set_property top main [current_fileset]
 # above but does not include timing information.
 launch_runs synth_1
 wait_on_run synth_1
-
-# Run implementation to generate a bitstream. This also produces the timing
-# report mentioned above. Removing this step makes things go quite a bit
-# faster if you just need the resource report!
-set_property STEPS.PHYS_OPT_DESIGN.IS_ENABLED true [get_runs impl_1]
-launch_runs impl_1 -to_step write_bitstream
-wait_on_run impl_1
