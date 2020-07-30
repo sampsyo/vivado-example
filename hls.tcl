@@ -9,4 +9,6 @@ create_clock -period 7
 
 csynth_design
 
+export_design -flow syn
+
 exit
